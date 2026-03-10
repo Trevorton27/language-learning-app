@@ -1,0 +1,1211 @@
+[
+  {
+    "english": "array",
+    "japaneseKanji": "配列",
+    "hiragana": "はいれつ",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "argument",
+    "japaneseKanji": "実引数",
+    "hiragana": "じつひきすう",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "boolean",
+    "japaneseKanji": "真偽値",
+    "hiragana": "しんぎち",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "conditional",
+    "japaneseKanji": "条件分岐",
+    "hiragana": "じょうけんぶんき",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "constant",
+    "japaneseKanji": "定数",
+    "hiragana": "ていすう",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "expression",
+    "japaneseKanji": "式",
+    "hiragana": "しき",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "function",
+    "japaneseKanji": "関数",
+    "hiragana": "かんすう",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "loop",
+    "japaneseKanji": "ループ",
+    "hiragana": "るーぷ",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "method",
+    "japaneseKanji": "メソッド",
+    "hiragana": "めそっど",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "module",
+    "japaneseKanji": "モジュール",
+    "hiragana": "もじゅーる",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "namespace",
+    "japaneseKanji": "名前空間",
+    "hiragana": "なまえくうかん",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "number",
+    "japaneseKanji": "数値",
+    "hiragana": "すうち",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "object",
+    "japaneseKanji": "オブジェクト",
+    "hiragana": "おぶじぇくと",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "operator",
+    "japaneseKanji": "演算子",
+    "hiragana": "えんざんし",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "package",
+    "japaneseKanji": "パッケージ",
+    "hiragana": "ぱっけーじ",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "parameter",
+    "japaneseKanji": "仮引数",
+    "hiragana": "かりひきすう",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "return value",
+    "japaneseKanji": "戻り値",
+    "hiragana": "もどりち",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "statement",
+    "japaneseKanji": "文",
+    "hiragana": "ぶん",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "string",
+    "japaneseKanji": "文字列",
+    "hiragana": "もじれつ",
+    "category": "programming_fundamentals"
+  },
+  {
+    "english": "variable",
+    "japaneseKanji": "変数",
+    "hiragana": "へんすう",
+    "category": "programming_fundamentals"
+  },
+
+  {
+    "english": "abstraction",
+    "japaneseKanji": "抽象化",
+    "hiragana": "ちゅうしょうか",
+    "category": "oop"
+  },
+  {
+    "english": "access modifier",
+    "japaneseKanji": "アクセス修飾子",
+    "hiragana": "あくせすしゅうしょくし",
+    "category": "oop"
+  },
+  {
+    "english": "aggregation",
+    "japaneseKanji": "集約",
+    "hiragana": "しゅうやく",
+    "category": "oop"
+  },
+  {
+    "english": "association",
+    "japaneseKanji": "関連",
+    "hiragana": "かんれん",
+    "category": "oop"
+  },
+  {
+    "english": "base class",
+    "japaneseKanji": "基底クラス",
+    "hiragana": "きていくらす",
+    "category": "oop"
+  },
+  {
+    "english": "composition",
+    "japaneseKanji": "コンポジション",
+    "hiragana": "こんぽじしょん",
+    "category": "oop"
+  },
+  {
+    "english": "constructor",
+    "japaneseKanji": "コンストラクタ",
+    "hiragana": "こんすとらくた",
+    "category": "oop"
+  },
+  {
+    "english": "destructor",
+    "japaneseKanji": "デストラクタ",
+    "hiragana": "ですとらくた",
+    "category": "oop"
+  },
+  {
+    "english": "derived class",
+    "japaneseKanji": "派生クラス",
+    "hiragana": "はせいくらす",
+    "category": "oop"
+  },
+  {
+    "english": "encapsulation",
+    "japaneseKanji": "カプセル化",
+    "hiragana": "かぷせるか",
+    "category": "oop"
+  },
+  {
+    "english": "field",
+    "japaneseKanji": "フィールド",
+    "hiragana": "ふぃーるど",
+    "category": "oop"
+  },
+  {
+    "english": "implementation",
+    "japaneseKanji": "実装",
+    "hiragana": "じっそう",
+    "category": "oop"
+  },
+  {
+    "english": "inheritance",
+    "japaneseKanji": "継承",
+    "hiragana": "けいしょう",
+    "category": "oop"
+  },
+  {
+    "english": "instance",
+    "japaneseKanji": "インスタンス",
+    "hiragana": "いんすたんす",
+    "category": "oop"
+  },
+  {
+    "english": "interface",
+    "japaneseKanji": "インターフェース",
+    "hiragana": "いんたーふぇーす",
+    "category": "oop"
+  },
+  {
+    "english": "overload",
+    "japaneseKanji": "オーバーロード",
+    "hiragana": "おーばーろーど",
+    "category": "oop"
+  },
+  {
+    "english": "override",
+    "japaneseKanji": "オーバーライド",
+    "hiragana": "おーばーらいど",
+    "category": "oop"
+  },
+  {
+    "english": "polymorphism",
+    "japaneseKanji": "多態性",
+    "hiragana": "たたいせい",
+    "category": "oop"
+  },
+  {
+    "english": "property",
+    "japaneseKanji": "プロパティ",
+    "hiragana": "ぷろぱてぃ",
+    "category": "oop"
+  },
+  {
+    "english": "static method",
+    "japaneseKanji": "静的メソッド",
+    "hiragana": "せいてきめそっど",
+    "category": "oop"
+  },
+
+  {
+    "english": "algorithm",
+    "japaneseKanji": "アルゴリズム",
+    "hiragana": "あるごりずむ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "binary search tree",
+    "japaneseKanji": "二分探索木",
+    "hiragana": "にぶんたんさくぼく",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "binary tree",
+    "japaneseKanji": "二分木",
+    "hiragana": "にぶんぎ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "data structure",
+    "japaneseKanji": "データ構造",
+    "hiragana": "でーたこうぞう",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "deque",
+    "japaneseKanji": "デック",
+    "hiragana": "でっく",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "edge",
+    "japaneseKanji": "辺",
+    "hiragana": "へん",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "graph",
+    "japaneseKanji": "グラフ",
+    "hiragana": "ぐらふ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "hash table",
+    "japaneseKanji": "ハッシュテーブル",
+    "hiragana": "はっしゅてーぶる",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "heap",
+    "japaneseKanji": "ヒープ",
+    "hiragana": "ひーぷ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "linked list",
+    "japaneseKanji": "連結リスト",
+    "hiragana": "れんけつりすと",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "list",
+    "japaneseKanji": "リスト",
+    "hiragana": "りすと",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "map",
+    "japaneseKanji": "マップ",
+    "hiragana": "まっぷ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "queue",
+    "japaneseKanji": "キュー",
+    "hiragana": "きゅー",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "searching",
+    "japaneseKanji": "探索",
+    "hiragana": "たんさく",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "set",
+    "japaneseKanji": "集合",
+    "hiragana": "しゅうごう",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "sorting",
+    "japaneseKanji": "ソート",
+    "hiragana": "そーと",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "stack",
+    "japaneseKanji": "スタック",
+    "hiragana": "すたっく",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "traversal",
+    "japaneseKanji": "走査",
+    "hiragana": "そうさ",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "tree",
+    "japaneseKanji": "木構造",
+    "hiragana": "きこうぞう",
+    "category": "data_structures_algorithms"
+  },
+  {
+    "english": "vertex",
+    "japaneseKanji": "頂点",
+    "hiragana": "ちょうてん",
+    "category": "data_structures_algorithms"
+  },
+
+  {
+    "english": "CORS",
+    "japaneseKanji": "CORS",
+    "hiragana": "しーおーあーるえす",
+    "category": "web_development"
+  },
+  {
+    "english": "CSS",
+    "japaneseKanji": "CSS",
+    "hiragana": "しーえすえす",
+    "category": "web_development"
+  },
+  {
+    "english": "HTML",
+    "japaneseKanji": "HTML",
+    "hiragana": "えいちてぃーえむえる",
+    "category": "web_development"
+  },
+  {
+    "english": "JSON",
+    "japaneseKanji": "JSON",
+    "hiragana": "じぇいそん",
+    "category": "web_development"
+  },
+  {
+    "english": "JavaScript",
+    "japaneseKanji": "ジャバスクリプト",
+    "hiragana": "じゃばすくりぷと",
+    "category": "web_development"
+  },
+  {
+    "english": "REST API",
+    "japaneseKanji": "REST API",
+    "hiragana": "れすとえーぴーあい",
+    "category": "web_development"
+  },
+  {
+    "english": "TypeScript",
+    "japaneseKanji": "タイプスクリプト",
+    "hiragana": "たいぷすくりぷと",
+    "category": "web_development"
+  },
+  {
+    "english": "body",
+    "japaneseKanji": "ボディ",
+    "hiragana": "ぼでぃ",
+    "category": "web_development"
+  },
+  {
+    "english": "cookie",
+    "japaneseKanji": "クッキー",
+    "hiragana": "くっきー",
+    "category": "web_development"
+  },
+  {
+    "english": "endpoint",
+    "japaneseKanji": "エンドポイント",
+    "hiragana": "えんどぽいんと",
+    "category": "web_development"
+  },
+  {
+    "english": "framework",
+    "japaneseKanji": "フレームワーク",
+    "hiragana": "ふれーむわーく",
+    "category": "web_development"
+  },
+  {
+    "english": "header",
+    "japaneseKanji": "ヘッダー",
+    "hiragana": "へっだー",
+    "category": "web_development"
+  },
+  {
+    "english": "library",
+    "japaneseKanji": "ライブラリ",
+    "hiragana": "らいぶらり",
+    "category": "web_development"
+  },
+  {
+    "english": "middleware",
+    "japaneseKanji": "ミドルウェア",
+    "hiragana": "みどるうぇあ",
+    "category": "web_development"
+  },
+  {
+    "english": "query parameter",
+    "japaneseKanji": "クエリパラメータ",
+    "hiragana": "くえりぱらめーた",
+    "category": "web_development"
+  },
+  {
+    "english": "route",
+    "japaneseKanji": "ルート",
+    "hiragana": "るーと",
+    "category": "web_development"
+  },
+  {
+    "english": "server-side rendering",
+    "japaneseKanji": "サーバーサイドレンダリング",
+    "hiragana": "さーばーさいどれんだりんぐ",
+    "category": "web_development"
+  },
+  {
+    "english": "session",
+    "japaneseKanji": "セッション",
+    "hiragana": "せっしょん",
+    "category": "web_development"
+  },
+  {
+    "english": "single page application",
+    "japaneseKanji": "シングルページアプリケーション",
+    "hiragana": "しんぐるぺーじあぷりけーしょん",
+    "category": "web_development"
+  },
+  {
+    "english": "status code",
+    "japaneseKanji": "ステータスコード",
+    "hiragana": "すてーたすこーど",
+    "category": "web_development"
+  },
+
+  {
+    "english": "column",
+    "japaneseKanji": "列",
+    "hiragana": "れつ",
+    "category": "database"
+  },
+  {
+    "english": "constraint",
+    "japaneseKanji": "制約",
+    "hiragana": "せいやく",
+    "category": "database"
+  },
+  {
+    "english": "database",
+    "japaneseKanji": "データベース",
+    "hiragana": "でーたべーす",
+    "category": "database"
+  },
+  {
+    "english": "foreign key",
+    "japaneseKanji": "外部キー",
+    "hiragana": "がいぶきー",
+    "category": "database"
+  },
+  {
+    "english": "index",
+    "japaneseKanji": "インデックス",
+    "hiragana": "いんでっくす",
+    "category": "database"
+  },
+  {
+    "english": "isolation level",
+    "japaneseKanji": "分離レベル",
+    "hiragana": "ぶんりれべる",
+    "category": "database"
+  },
+  {
+    "english": "join",
+    "japaneseKanji": "結合",
+    "hiragana": "けつごう",
+    "category": "database"
+  },
+  {
+    "english": "migration",
+    "japaneseKanji": "マイグレーション",
+    "hiragana": "まいぐれーしょん",
+    "category": "database"
+  },
+  {
+    "english": "normalization",
+    "japaneseKanji": "正規化",
+    "hiragana": "せいきか",
+    "category": "database"
+  },
+  {
+    "english": "primary key",
+    "japaneseKanji": "主キー",
+    "hiragana": "しゅきー",
+    "category": "database"
+  },
+  {
+    "english": "query",
+    "japaneseKanji": "クエリ",
+    "hiragana": "くえり",
+    "category": "database"
+  },
+  {
+    "english": "record",
+    "japaneseKanji": "レコード",
+    "hiragana": "れこーど",
+    "category": "database"
+  },
+  {
+    "english": "rollback",
+    "japaneseKanji": "ロールバック",
+    "hiragana": "ろーるばっく",
+    "category": "database"
+  },
+  {
+    "english": "row",
+    "japaneseKanji": "行",
+    "hiragana": "ぎょう",
+    "category": "database"
+  },
+  {
+    "english": "schema",
+    "japaneseKanji": "スキーマ",
+    "hiragana": "すきーま",
+    "category": "database"
+  },
+  {
+    "english": "stored procedure",
+    "japaneseKanji": "ストアドプロシージャ",
+    "hiragana": "すとあどぷろしーじゃ",
+    "category": "database"
+  },
+  {
+    "english": "table",
+    "japaneseKanji": "表",
+    "hiragana": "ひょう",
+    "category": "database"
+  },
+  {
+    "english": "transaction",
+    "japaneseKanji": "トランザクション",
+    "hiragana": "とらんざくしょん",
+    "category": "database"
+  },
+  {
+    "english": "trigger",
+    "japaneseKanji": "トリガー",
+    "hiragana": "とりがー",
+    "category": "database"
+  },
+  {
+    "english": "view",
+    "japaneseKanji": "ビュー",
+    "hiragana": "びゅー",
+    "category": "database"
+  },
+
+  {
+    "english": "artifact",
+    "japaneseKanji": "アーティファクト",
+    "hiragana": "あーてぃふぁくと",
+    "category": "devops"
+  },
+  {
+    "english": "build",
+    "japaneseKanji": "ビルド",
+    "hiragana": "びるど",
+    "category": "devops"
+  },
+  {
+    "english": "CI/CD",
+    "japaneseKanji": "CI/CD",
+    "hiragana": "しーあい・しーでぃー",
+    "category": "devops"
+  },
+  {
+    "english": "configuration management",
+    "japaneseKanji": "構成管理",
+    "hiragana": "こうせいかんり",
+    "category": "devops"
+  },
+  {
+    "english": "container",
+    "japaneseKanji": "コンテナ",
+    "hiragana": "こんてな",
+    "category": "devops"
+  },
+  {
+    "english": "deployment",
+    "japaneseKanji": "デプロイ",
+    "hiragana": "でぷろい",
+    "category": "devops"
+  },
+  {
+    "english": "DevOps",
+    "japaneseKanji": "デブオプス",
+    "hiragana": "でぶおぷす",
+    "category": "devops"
+  },
+  {
+    "english": "environment variable",
+    "japaneseKanji": "環境変数",
+    "hiragana": "かんきょうへんすう",
+    "category": "devops"
+  },
+  {
+    "english": "image",
+    "japaneseKanji": "イメージ",
+    "hiragana": "いめーじ",
+    "category": "devops"
+  },
+  {
+    "english": "infrastructure as code",
+    "japaneseKanji": "コードによるインフラ管理",
+    "hiragana": "こーどによるいんふらかんり",
+    "category": "devops"
+  },
+  {
+    "english": "logging",
+    "japaneseKanji": "ログ記録",
+    "hiragana": "ろぐきろく",
+    "category": "devops"
+  },
+  {
+    "english": "metric",
+    "japaneseKanji": "メトリクス",
+    "hiragana": "めとりくす",
+    "category": "devops"
+  },
+  {
+    "english": "monitoring",
+    "japaneseKanji": "監視",
+    "hiragana": "かんし",
+    "category": "devops"
+  },
+  {
+    "english": "orchestration",
+    "japaneseKanji": "オーケストレーション",
+    "hiragana": "おーけすとれーしょん",
+    "category": "devops"
+  },
+  {
+    "english": "pipeline",
+    "japaneseKanji": "パイプライン",
+    "hiragana": "ぱいぷらいん",
+    "category": "devops"
+  },
+  {
+    "english": "production environment",
+    "japaneseKanji": "本番環境",
+    "hiragana": "ほんばんかんきょう",
+    "category": "devops"
+  },
+  {
+    "english": "runner",
+    "japaneseKanji": "ランナー",
+    "hiragana": "らんなー",
+    "category": "devops"
+  },
+  {
+    "english": "staging environment",
+    "japaneseKanji": "ステージング環境",
+    "hiragana": "すてーじんぐかんきょう",
+    "category": "devops"
+  },
+  {
+    "english": "version control",
+    "japaneseKanji": "バージョン管理",
+    "hiragana": "ばーじょんかんり",
+    "category": "devops"
+  },
+  {
+    "english": "rollback",
+    "japaneseKanji": "ロールバック",
+    "hiragana": "ろーるばっく",
+    "category": "devops"
+  },
+
+  {
+    "english": "API gateway",
+    "japaneseKanji": "APIゲートウェイ",
+    "hiragana": "えーぴーあいげーとぅうぇい",
+    "category": "cloud"
+  },
+  {
+    "english": "auto scaling",
+    "japaneseKanji": "自動スケーリング",
+    "hiragana": "じどうすけーりんぐ",
+    "category": "cloud"
+  },
+  {
+    "english": "availability zone",
+    "japaneseKanji": "アベイラビリティーゾーン",
+    "hiragana": "あべいらびりてぃーぞーん",
+    "category": "cloud"
+  },
+  {
+    "english": "block storage",
+    "japaneseKanji": "ブロックストレージ",
+    "hiragana": "ぶろっくすとれーじ",
+    "category": "cloud"
+  },
+  {
+    "english": "cloud",
+    "japaneseKanji": "クラウド",
+    "hiragana": "くらうど",
+    "category": "cloud"
+  },
+  {
+    "english": "function as a service",
+    "japaneseKanji": "FaaS",
+    "hiragana": "ふぁーず",
+    "category": "cloud"
+  },
+  {
+    "english": "infrastructure as a service",
+    "japaneseKanji": "IaaS",
+    "hiragana": "あいあーす",
+    "category": "cloud"
+  },
+  {
+    "english": "instance",
+    "japaneseKanji": "インスタンス",
+    "hiragana": "いんすたんす",
+    "category": "cloud"
+  },
+  {
+    "english": "load balancer",
+    "japaneseKanji": "ロードバランサー",
+    "hiragana": "ろーどばらんさー",
+    "category": "cloud"
+  },
+  {
+    "english": "managed service",
+    "japaneseKanji": "マネージドサービス",
+    "hiragana": "まねーじどさーびす",
+    "category": "cloud"
+  },
+  {
+    "english": "network security group",
+    "japaneseKanji": "ネットワークセキュリティグループ",
+    "hiragana": "ねっとわーくせきゅりてぃぐるーぷ",
+    "category": "cloud"
+  },
+  {
+    "english": "object storage",
+    "japaneseKanji": "オブジェクトストレージ",
+    "hiragana": "おぶじぇくとすとれーじ",
+    "category": "cloud"
+  },
+  {
+    "english": "platform as a service",
+    "japaneseKanji": "PaaS",
+    "hiragana": "ぱーす",
+    "category": "cloud"
+  },
+  {
+    "english": "region",
+    "japaneseKanji": "リージョン",
+    "hiragana": "りーじょん",
+    "category": "cloud"
+  },
+  {
+    "english": "serverless",
+    "japaneseKanji": "サーバーレス",
+    "hiragana": "さーばーれす",
+    "category": "cloud"
+  },
+  {
+    "english": "subnet",
+    "japaneseKanji": "サブネット",
+    "hiragana": "さぶねっと",
+    "category": "cloud"
+  },
+  {
+    "english": "virtual machine",
+    "japaneseKanji": "仮想マシン",
+    "hiragana": "かそうましん",
+    "category": "cloud"
+  },
+  {
+    "english": "VPC",
+    "japaneseKanji": "VPC",
+    "hiragana": "ぶいぴーしー",
+    "category": "cloud"
+  },
+  {
+    "english": "NAT gateway",
+    "japaneseKanji": "NATゲートウェイ",
+    "hiragana": "なっとげーとぅうぇい",
+    "category": "cloud"
+  },
+  {
+    "english": "gateway",
+    "japaneseKanji": "ゲートウェイ",
+    "hiragana": "げーとぅうぇい",
+    "category": "cloud"
+  },
+
+  {
+    "english": "access token",
+    "japaneseKanji": "アクセス トークン",
+    "hiragana": "あくせす とーくん",
+    "category": "security"
+  },
+  {
+    "english": "asymmetric key",
+    "japaneseKanji": "非対称鍵",
+    "hiragana": "ひたいしょうかぎ",
+    "category": "security"
+  },
+  {
+    "english": "authentication",
+    "japaneseKanji": "認証",
+    "hiragana": "にんしょう",
+    "category": "security"
+  },
+  {
+    "english": "authorization",
+    "japaneseKanji": "認可",
+    "hiragana": "にんか",
+    "category": "security"
+  },
+  {
+    "english": "certificate",
+    "japaneseKanji": "証明書",
+    "hiragana": "しょうめいしょ",
+    "category": "security"
+  },
+  {
+    "english": "decryption",
+    "japaneseKanji": "復号",
+    "hiragana": "ふくごう",
+    "category": "security"
+  },
+  {
+    "english": "encryption",
+    "japaneseKanji": "暗号化",
+    "hiragana": "あんごうか",
+    "category": "security"
+  },
+  {
+    "english": "exploit",
+    "japaneseKanji": "エクスプロイト",
+    "hiragana": "えくすぷろいと",
+    "category": "security"
+  },
+  {
+    "english": "hash function",
+    "japaneseKanji": "ハッシュ関数",
+    "hiragana": "はっしゅかんすう",
+    "category": "security"
+  },
+  {
+    "english": "HTTPS",
+    "japaneseKanji": "HTTPS",
+    "hiragana": "えいちてぃーてぃーぴーえす",
+    "category": "security"
+  },
+  {
+    "english": "identity provider",
+    "japaneseKanji": "アイデンティティ プロバイダ",
+    "hiragana": "あいでんてぃてぃ ぷろばいだ",
+    "category": "security"
+  },
+  {
+    "english": "penetration test",
+    "japaneseKanji": "ペネトレーションテスト",
+    "hiragana": "ぺねとれーしょんてすと",
+    "category": "security"
+  },
+  {
+    "english": "refresh token",
+    "japaneseKanji": "リフレッシュトークン",
+    "hiragana": "りふれっしゅとーくん",
+    "category": "security"
+  },
+  {
+    "english": "salt",
+    "japaneseKanji": "ソルト",
+    "hiragana": "そると",
+    "category": "security"
+  },
+  {
+    "english": "security",
+    "japaneseKanji": "セキュリティ",
+    "hiragana": "せきゅりてぃ",
+    "category": "security"
+  },
+  {
+    "english": "security patch",
+    "japaneseKanji": "セキュリティパッチ",
+    "hiragana": "せきゅりてぃぱっち",
+    "category": "security"
+  },
+  {
+    "english": "session token",
+    "japaneseKanji": "セッショントークン",
+    "hiragana": "せっしょんとーくん",
+    "category": "security"
+  },
+  {
+    "english": "symmetric key",
+    "japaneseKanji": "共通鍵",
+    "hiragana": "きょうつうかぎ",
+    "category": "security"
+  },
+  {
+    "english": "TLS",
+    "japaneseKanji": "TLS",
+    "hiragana": "てぃーえるえす",
+    "category": "security"
+  },
+  {
+    "english": "vulnerability",
+    "japaneseKanji": "脆弱性",
+    "hiragana": "ぜいじゃくせい",
+    "category": "security"
+  },
+
+  {
+    "english": "batch",
+    "japaneseKanji": "バッチ",
+    "hiragana": "ばっち",
+    "category": "ai_ml"
+  },
+  {
+    "english": "deep learning",
+    "japaneseKanji": "ディープラーニング",
+    "hiragana": "でぃーぷらーにんぐ",
+    "category": "ai_ml"
+  },
+  {
+    "english": "epoch",
+    "japaneseKanji": "エポック",
+    "hiragana": "えぽっく",
+    "category": "ai_ml"
+  },
+  {
+    "english": "feature",
+    "japaneseKanji": "特徴量",
+    "hiragana": "とくちょうりょう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "gradient descent",
+    "japaneseKanji": "勾配降下法",
+    "hiragana": "こうばいこうかほう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "inference",
+    "japaneseKanji": "推論",
+    "hiragana": "すいろん",
+    "category": "ai_ml"
+  },
+  {
+    "english": "label",
+    "japaneseKanji": "ラベル",
+    "hiragana": "らべる",
+    "category": "ai_ml"
+  },
+  {
+    "english": "loss function",
+    "japaneseKanji": "損失関数",
+    "hiragana": "そんしつかんすう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "machine learning",
+    "japaneseKanji": "機械学習",
+    "hiragana": "きかいがくしゅう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "model",
+    "japaneseKanji": "モデル",
+    "hiragana": "もでる",
+    "category": "ai_ml"
+  },
+  {
+    "english": "neural network",
+    "japaneseKanji": "ニューラルネットワーク",
+    "hiragana": "にゅーらるねっとわーく",
+    "category": "ai_ml"
+  },
+  {
+    "english": "optimizer",
+    "japaneseKanji": "オプティマイザ",
+    "hiragana": "おぷてぃまいざ",
+    "category": "ai_ml"
+  },
+  {
+    "english": "overfitting",
+    "japaneseKanji": "過学習",
+    "hiragana": "かがくしゅう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "reinforcement learning",
+    "japaneseKanji": "強化学習",
+    "hiragana": "きょうかがくしゅう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "supervised learning",
+    "japaneseKanji": "教師あり学習",
+    "hiragana": "きょうしありがくしゅう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "test data",
+    "japaneseKanji": "テストデータ",
+    "hiragana": "てすとでーた",
+    "category": "ai_ml"
+  },
+  {
+    "english": "training data",
+    "japaneseKanji": "学習データ",
+    "hiragana": "がくしゅうでーた",
+    "category": "ai_ml"
+  },
+  {
+    "english": "unsupervised learning",
+    "japaneseKanji": "教師なし学習",
+    "hiragana": "きょうしなしがくしゅう",
+    "category": "ai_ml"
+  },
+  {
+    "english": "validation data",
+    "japaneseKanji": "検証データ",
+    "hiragana": "けんしょうでーた",
+    "category": "ai_ml"
+  },
+  {
+    "english": "underfitting",
+    "japaneseKanji": "未学習",
+    "hiragana": "みがくしゅう",
+    "category": "ai_ml"
+  },
+
+  {
+    "english": "button",
+    "japaneseKanji": "ボタン",
+    "hiragana": "ぼたん",
+    "category": "ui_ux"
+  },
+  {
+    "english": "call to action",
+    "japaneseKanji": "コールトゥアクション",
+    "hiragana": "こーるとぅあくしょん",
+    "category": "ui_ux"
+  },
+  {
+    "english": "color palette",
+    "japaneseKanji": "カラーパレット",
+    "hiragana": "からーぱれっと",
+    "category": "ui_ux"
+  },
+  {
+    "english": "dropdown",
+    "japaneseKanji": "ドロップダウン",
+    "hiragana": "どろっぷだうん",
+    "category": "ui_ux"
+  },
+  {
+    "english": "footer",
+    "japaneseKanji": "フッター",
+    "hiragana": "ふったー",
+    "category": "ui_ux"
+  },
+  {
+    "english": "form",
+    "japaneseKanji": "フォーム",
+    "hiragana": "ふぉーむ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "grid system",
+    "japaneseKanji": "グリッドシステム",
+    "hiragana": "ぐりっどしすてむ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "icon",
+    "japaneseKanji": "アイコン",
+    "hiragana": "あいこん",
+    "category": "ui_ux"
+  },
+  {
+    "english": "input field",
+    "japaneseKanji": "入力フィールド",
+    "hiragana": "にゅうりょくふぃーるど",
+    "category": "ui_ux"
+  },
+  {
+    "english": "layout",
+    "japaneseKanji": "レイアウト",
+    "hiragana": "れいあうと",
+    "category": "ui_ux"
+  },
+  {
+    "english": "mockup",
+    "japaneseKanji": "モックアップ",
+    "hiragana": "もっくあっぷ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "modal dialog",
+    "japaneseKanji": "モーダルダイアログ",
+    "hiragana": "もーだるだいあろぐ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "navigation bar",
+    "japaneseKanji": "ナビゲーションバー",
+    "hiragana": "なびげーしょんばー",
+    "category": "ui_ux"
+  },
+  {
+    "english": "prototype",
+    "japaneseKanji": "プロトタイプ",
+    "hiragana": "ぷろとたいぷ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "sidebar",
+    "japaneseKanji": "サイドバー",
+    "hiragana": "さいどばー",
+    "category": "ui_ux"
+  },
+  {
+    "english": "typography",
+    "japaneseKanji": "タイポグラフィ",
+    "hiragana": "たいぽぐらふぃ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "user experience",
+    "japaneseKanji": "ユーザー体験",
+    "hiragana": "ゆーざーたいけん",
+    "category": "ui_ux"
+  },
+  {
+    "english": "user interface",
+    "japaneseKanji": "ユーザーインターフェース",
+    "hiragana": "ゆーざーいんたーふぇーす",
+    "category": "ui_ux"
+  },
+  {
+    "english": "wireframe",
+    "japaneseKanji": "ワイヤーフレーム",
+    "hiragana": "わいやーふれーむ",
+    "category": "ui_ux"
+  },
+  {
+    "english": "tooltip",
+    "japaneseKanji": "ツールチップ",
+    "hiragana": "つーるちっぷ",
+    "category": "ui_ux"
+  }
+]
