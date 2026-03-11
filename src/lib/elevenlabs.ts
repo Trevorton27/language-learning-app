@@ -39,16 +39,49 @@ Guidelines:
 - Keep your responses concise for natural conversation flow`;
 }
 
-export function createSessionConfig(vocabulary: VocabItem[]): SpeakingSessionConfig {
+export type SpeakingMode = 'conversation' | 'pronunciation';
+
+function buildPronunciationPrompt(vocabulary: VocabItem[]): string {
+  const vocabList = vocabulary
+    .map((v) => `- ${v.kanji} (${v.hiragana}): ${v.english}`)
+    .join('\n');
+
+  return `You are a Japanese pronunciation coach. Your ONLY job is to help the student practice pronouncing the words below, one at a time.
+
+Vocabulary:
+${vocabList}
+
+Strict flow for EACH word:
+1. Say: "Next word:" then clearly pronounce the Japanese word ONCE, slowly.
+2. Wait for the student to repeat.
+3. Listen carefully and give brief, specific feedback on their pronunciation.
+   - If correct: say "Good!" or "Perfect!" and move on.
+   - If incorrect: say what to fix (e.g. "Try lengthening the う sound"), then pronounce it again and wait for one more attempt.
+4. Move to the next word.
+
+Rules:
+- Go through the list IN ORDER.
+- Do NOT make conversation. This is pronunciation drill only.
+- Keep all feedback to ONE short sentence.
+- Do NOT skip words.
+- After all words are done, say: "That's all the words! Great practice today." and stop.
+- Speak in English for instructions, Japanese only when pronouncing the target word.`;
+}
+
+export function createSessionConfig(vocabulary: VocabItem[], mode: SpeakingMode = 'conversation'): SpeakingSessionConfig {
   const agentId = getAgentId();
   if (!agentId) {
     throw new Error('ELEVENLABS_AGENT_ID environment variable is not set');
   }
 
+  const systemPrompt = mode === 'pronunciation'
+    ? buildPronunciationPrompt(vocabulary)
+    : buildSystemPrompt(vocabulary);
+
   return {
     agentId,
     vocabulary,
-    systemPrompt: buildSystemPrompt(vocabulary),
+    systemPrompt,
   };
 }
 

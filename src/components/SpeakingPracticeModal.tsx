@@ -24,6 +24,16 @@ const SpeakingPracticeModal: React.FC<SpeakingPracticeModalProps> = ({ flashcard
     initRef.current = true;
 
     try {
+      // Request mic permission early, while still close to user gesture.
+      // This primes the browser permission so the SDK's internal getUserMedia succeeds.
+      let micStream: MediaStream | null = null;
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (micErr) {
+        throw new Error('Microphone access denied. Please allow microphone access and try again.');
+      }
+      micStream.getTracks().forEach((t) => t.stop());
+
       const res = await fetch('/api/speaking/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,17 +67,25 @@ const SpeakingPracticeModal: React.FC<SpeakingPracticeModalProps> = ({ flashcard
           },
         },
         onConnect: () => {
+          console.log('[Speaking] Connected to ElevenLabs agent');
           setStatus('connected');
           setIsMicActive(true);
         },
         onDisconnect: () => {
+          console.log('[Speaking] Disconnected from agent');
           setStatus('ended');
           setIsMicActive(false);
         },
         onError: (message: string) => {
-          console.error('ElevenLabs error:', message);
+          console.error('[Speaking] Error:', message);
           setError('Voice session encountered an error.');
           setStatus('error');
+        },
+        onMessage: ({ message, source }: { message: string; source: string }) => {
+          console.log(`[Speaking] ${source}: ${message}`);
+        },
+        onModeChange: ({ mode }: { mode: string }) => {
+          console.log(`[Speaking] Mode: ${mode}`);
         },
       });
 

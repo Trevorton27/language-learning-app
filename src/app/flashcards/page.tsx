@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import FlashcardCard from '../../components/FlashcardCard';
 import SpeakingPracticeModal from '../../components/SpeakingPracticeModal';
+import PronunciationModal from '../../components/PronunciationModal';
 
 interface Flashcard {
     id: string;
@@ -38,6 +39,7 @@ const FlashcardsPage = () => {
     const [selectMode, setSelectMode] = useState(false);
     const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
     const [showSpeakingModal, setShowSpeakingModal] = useState(false);
+    const [showPronunciationModal, setShowPronunciationModal] = useState(false);
 
     const selectedCategories = categoriesParam
         ? new Set(categoriesParam.split(','))
@@ -281,19 +283,34 @@ const FlashcardsPage = () => {
                     >
                         {selectedIds.size === filteredFlashcards.length ? 'Deselect All' : 'Select All'}
                     </button>
-                    <button
-                        onClick={handlePracticeSpeaking}
-                        disabled={selectedIds.size === 0}
-                        className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition focus:outline-none focus:ring-2 ${selectedIds.size > 0
-                            ? 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500/20'
-                            : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-400 dark:text-zinc-500 cursor-not-allowed'
-                        }`}
-                    >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                        </svg>
-                        Practice Speaking{selectedIds.size > 0 ? ` (${selectedIds.size})` : ''}
-                    </button>
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={handlePracticeSpeaking}
+                            disabled={selectedIds.size === 0}
+                            className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition focus:outline-none focus:ring-2 ${selectedIds.size > 0
+                                ? 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500/20'
+                                : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-400 dark:text-zinc-500 cursor-not-allowed'
+                            }`}
+                        >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                            </svg>
+                            Conversation{selectedIds.size > 0 ? ` (${selectedIds.size})` : ''}
+                        </button>
+                        <button
+                            onClick={() => selectedIds.size > 0 && setShowPronunciationModal(true)}
+                            disabled={selectedIds.size === 0}
+                            className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition focus:outline-none focus:ring-2 ${selectedIds.size > 0
+                                ? 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500/20'
+                                : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-400 dark:text-zinc-500 cursor-not-allowed'
+                            }`}
+                        >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                            </svg>
+                            Pronunciation{selectedIds.size > 0 ? ` (${selectedIds.size})` : ''}
+                        </button>
+                    </div>
                 </div>
             )}
 
@@ -423,17 +440,26 @@ const FlashcardsPage = () => {
                 </>
             )}
 
-            {/* Floating practice button for mobile when cards are selected */}
+            {/* Floating practice buttons for mobile when cards are selected */}
             {selectMode && selectedIds.size > 0 && (
-                <div className="fixed bottom-6 left-0 right-0 flex justify-center sm:hidden z-40">
+                <div className="fixed bottom-6 left-0 right-0 flex justify-center gap-2 sm:hidden z-40 px-4">
                     <button
                         onClick={handlePracticeSpeaking}
-                        className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-6 py-3.5 text-sm font-medium shadow-lg shadow-emerald-600/25 hover:bg-emerald-700 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                        className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-5 py-3.5 text-sm font-medium shadow-lg shadow-emerald-600/25 hover:bg-emerald-700 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
                     >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                         </svg>
-                        Practice Speaking ({selectedIds.size})
+                        Conversation
+                    </button>
+                    <button
+                        onClick={() => setShowPronunciationModal(true)}
+                        className="inline-flex items-center gap-2 rounded-full bg-blue-600 text-white px-5 py-3.5 text-sm font-medium shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                        </svg>
+                        Pronunciation
                     </button>
                 </div>
             )}
@@ -443,6 +469,14 @@ const FlashcardsPage = () => {
                 <SpeakingPracticeModal
                     flashcardIds={Array.from(selectedIds)}
                     onClose={handleCloseSpeakingModal}
+                />
+            )}
+
+            {/* Pronunciation Practice Modal */}
+            {showPronunciationModal && (
+                <PronunciationModal
+                    flashcardIds={Array.from(selectedIds)}
+                    onClose={() => setShowPronunciationModal(false)}
                 />
             )}
         </div>
