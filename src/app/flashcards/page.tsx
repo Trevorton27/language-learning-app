@@ -1,7 +1,8 @@
 'use client';
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import FlashcardCard from '../../components/FlashcardCard';
+import SpeakingPracticeModal from '../../components/SpeakingPracticeModal';
 
 interface Flashcard {
     id: string;
@@ -31,6 +32,11 @@ const FlashcardsPage = () => {
     const [mobileCardIndex, setMobileCardIndex] = useState(0);
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // Selection state
+    const [selectMode, setSelectMode] = useState(false);
+    const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+    const [showSpeakingModal, setShowSpeakingModal] = useState(false);
 
     const filteredFlashcards = searchQuery
         ? flashcards.filter((card) => {
@@ -93,13 +99,11 @@ const FlashcardsPage = () => {
         if (!currentCard) return;
         const correctReading = extractReading(currentCard.back);
 
-        // Get all other possible readings as distractors
         const otherReadings = filteredFlashcards
             .filter((_, idx) => idx !== currentIndex)
             .map(card => extractReading(card.back))
             .filter((reading, index, self) => reading !== correctReading && self.indexOf(reading) === index);
 
-        // Shuffle and pick 2 distractors
         const distractors = otherReadings
             .sort(() => Math.random() - 0.5)
             .slice(0, 2);
@@ -149,12 +153,52 @@ const FlashcardsPage = () => {
             if (response.ok) {
                 setFlashcards([]);
                 setStudyMode(false);
+                setSelectMode(false);
+                setSelectedIds(new Set());
             } else {
                 console.error('Failed to clear flashcards');
             }
         } catch (error) {
             console.error('Error clearing flashcards:', error);
         }
+    };
+
+    const handleCardSelect = useCallback((id: string) => {
+        setSelectedIds((prev) => {
+            const next = new Set(prev);
+            if (next.has(id)) {
+                next.delete(id);
+            } else {
+                next.add(id);
+            }
+            return next;
+        });
+    }, []);
+
+    const handleSelectAll = () => {
+        if (selectedIds.size === filteredFlashcards.length) {
+            setSelectedIds(new Set());
+        } else {
+            setSelectedIds(new Set(filteredFlashcards.map((c) => c.id)));
+        }
+    };
+
+    const toggleSelectMode = () => {
+        if (selectMode) {
+            setSelectedIds(new Set());
+        }
+        setSelectMode(!selectMode);
+        if (studyMode) setStudyMode(false);
+    };
+
+    const handlePracticeSpeaking = () => {
+        if (selectedIds.size > 0) {
+            setShowSpeakingModal(true);
+        }
+    };
+
+    const handleCloseSpeakingModal = () => {
+        setShowSpeakingModal(false);
     };
 
     if (loading) {
@@ -171,31 +215,71 @@ const FlashcardsPage = () => {
                 <div>
                     <h1 className="text-3xl font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">My Flashcards</h1>
                     <p className="text-zinc-500 dark:text-zinc-400 mt-1">
-                        {searchQuery
-                            ? `${filteredFlashcards.length} of ${flashcards.length} cards`
-                            : `${flashcards.length} cards available for study`}
+                        {selectMode && selectedIds.size > 0
+                            ? `${selectedIds.size} card${selectedIds.size !== 1 ? 's' : ''} selected`
+                            : searchQuery
+                                ? `${filteredFlashcards.length} of ${flashcards.length} cards`
+                                : `${flashcards.length} cards available for study`}
                     </p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 flex-wrap">
                     {flashcards.length > 0 && (
+                        <>
+                            <button
+                                onClick={clearAllFlashcards}
+                                className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium text-red-600 dark:text-red-400 bg-white dark:bg-zinc-900 ring-1 ring-zinc-300 dark:ring-zinc-700 transition hover:bg-red-50 dark:hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                            >
+                                Clear All
+                            </button>
+                            <button
+                                onClick={toggleSelectMode}
+                                className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium transition focus:outline-none focus:ring-2 ${selectMode
+                                    ? 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500/20'
+                                    : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 ring-1 ring-zinc-300 dark:ring-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 focus:ring-zinc-900/20'
+                                }`}
+                            >
+                                {selectMode ? 'Cancel Select' : 'Select Cards'}
+                            </button>
+                        </>
+                    )}
+                    {!selectMode && (
                         <button
-                            onClick={clearAllFlashcards}
-                            className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium text-red-600 dark:text-red-400 bg-white dark:bg-zinc-900 ring-1 ring-zinc-300 dark:ring-zinc-700 transition hover:bg-red-50 dark:hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                            onClick={() => setStudyMode(!studyMode)}
+                            className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium transition focus:outline-none focus:ring-2 ${studyMode
+                                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 ring-1 ring-zinc-300 dark:ring-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 focus:ring-zinc-900/20'
+                                : 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus:ring-zinc-900/20'
+                            }`}
                         >
-                            Clear All
+                            {studyMode ? 'Exit Study Mode' : 'Enter Study Mode'}
                         </button>
                     )}
-                    <button
-                        onClick={() => setStudyMode(!studyMode)}
-                        className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium transition focus:outline-none focus:ring-2 ${studyMode
-                            ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 ring-1 ring-zinc-300 dark:ring-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 focus:ring-zinc-900/20'
-                            : 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 focus:ring-zinc-900/20'
-                            }`}
-                    >
-                        {studyMode ? 'Exit Study Mode' : 'Enter Study Mode'}
-                    </button>
                 </div>
             </div>
+
+            {/* Select mode toolbar */}
+            {selectMode && filteredFlashcards.length > 0 && (
+                <div className="flex items-center justify-between bg-zinc-50 dark:bg-zinc-800/50 rounded-xl px-4 py-3 ring-1 ring-zinc-200 dark:ring-zinc-700">
+                    <button
+                        onClick={handleSelectAll}
+                        className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition"
+                    >
+                        {selectedIds.size === filteredFlashcards.length ? 'Deselect All' : 'Select All'}
+                    </button>
+                    <button
+                        onClick={handlePracticeSpeaking}
+                        disabled={selectedIds.size === 0}
+                        className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition focus:outline-none focus:ring-2 ${selectedIds.size > 0
+                            ? 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500/20'
+                            : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-400 dark:text-zinc-500 cursor-not-allowed'
+                        }`}
+                    >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                        </svg>
+                        Practice Speaking{selectedIds.size > 0 ? ` (${selectedIds.size})` : ''}
+                    </button>
+                </div>
+            )}
 
             {filteredFlashcards.length === 0 ? (
                 <div className="text-center py-20 bg-white dark:bg-zinc-900 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700">
@@ -215,7 +299,6 @@ const FlashcardsPage = () => {
                         <FlashcardCard
                             flashcard={{
                                 ...filteredFlashcards[currentIndex],
-                                // Japanese First: Kanji on front, English on back
                                 front: extractKanji(filteredFlashcards[currentIndex].back),
                                 back: filteredFlashcards[currentIndex].front,
                             }}
@@ -260,11 +343,13 @@ const FlashcardsPage = () => {
                                     key={filteredFlashcards[mobileCardIndex].id}
                                     flashcard={{
                                         ...filteredFlashcards[mobileCardIndex],
-                                        // Japanese First: Kanji on front, English on back
                                         front: extractKanji(filteredFlashcards[mobileCardIndex].back),
                                         back: filteredFlashcards[mobileCardIndex].front,
                                     }}
                                     correctReading={extractReading(filteredFlashcards[mobileCardIndex].back)}
+                                    selectable={selectMode}
+                                    selected={selectedIds.has(filteredFlashcards[mobileCardIndex].id)}
+                                    onSelect={handleCardSelect}
                                 />
                             </div>
 
@@ -309,15 +394,40 @@ const FlashcardsPage = () => {
                                 key={flashcard.id}
                                 flashcard={{
                                     ...flashcard,
-                                    // Japanese First: Kanji on front, English on back
                                     front: extractKanji(flashcard.back),
                                     back: flashcard.front,
                                 }}
                                 correctReading={extractReading(flashcard.back)}
+                                selectable={selectMode}
+                                selected={selectedIds.has(flashcard.id)}
+                                onSelect={handleCardSelect}
                             />
                         ))}
                     </div>
                 </>
+            )}
+
+            {/* Floating practice button for mobile when cards are selected */}
+            {selectMode && selectedIds.size > 0 && (
+                <div className="fixed bottom-6 left-0 right-0 flex justify-center sm:hidden z-40">
+                    <button
+                        onClick={handlePracticeSpeaking}
+                        className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-6 py-3.5 text-sm font-medium shadow-lg shadow-emerald-600/25 hover:bg-emerald-700 transition focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                    >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                        </svg>
+                        Practice Speaking ({selectedIds.size})
+                    </button>
+                </div>
+            )}
+
+            {/* Speaking Practice Modal */}
+            {showSpeakingModal && (
+                <SpeakingPracticeModal
+                    flashcardIds={Array.from(selectedIds)}
+                    onClose={handleCloseSpeakingModal}
+                />
             )}
         </div>
     );

@@ -10,6 +10,7 @@ A modern web application for learning Japanese and English vocabulary using AI-p
 - Grid view for desktop browsing
 - Japanese-first display (Kanji on front, English on back)
 - Hiragana reading display for all cards
+- **Speaking Practice**: Select cards and practice pronunciation with an AI voice agent (ElevenLabs)
 
 ### AI-Powered Vocabulary Upload
 - **Multiple Input Formats**: Upload TXT, CSV, JSON, PDF, Word docs, or images
@@ -35,6 +36,7 @@ A modern web application for learning Japanese and English vocabulary using AI-p
 - **Styling**: Tailwind CSS
 - **Database**: PostgreSQL (Neon) with Prisma ORM
 - **AI**: OpenAI GPT-4o / GPT-4o-mini
+- **Voice AI**: ElevenLabs Conversational AI (optional)
 - **Authentication**: Clerk (optional)
 - **Deployment**: Vercel
 
@@ -69,6 +71,10 @@ A modern web application for learning Japanese and English vocabulary using AI-p
    # Optional: Clerk Authentication
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
    CLERK_SECRET_KEY=your_clerk_secret
+
+   # Optional: ElevenLabs Speaking Practice
+   ELEVENLABS_API_KEY=your_elevenlabs_api_key
+   ELEVENLABS_AGENT_ID=your_elevenlabs_agent_id
    ```
 
 4. Set up the database:
@@ -135,6 +141,7 @@ ai-flashcard-app/
 | POST | `/api/upload/process` | Process uploaded content with AI |
 | POST | `/api/upload/confirm` | Save processed vocabulary |
 | POST | `/api/import-vocab` | Bulk import vocabulary |
+| POST | `/api/speaking/session` | Create a speaking practice session |
 
 ## Environment Variables
 
@@ -144,6 +151,35 @@ ai-flashcard-app/
 | `OPENAI_API_KEY` | For AI features | OpenAI API key for translations |
 | `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | No | Clerk public key |
 | `CLERK_SECRET_KEY` | No | Clerk secret key |
+| `ELEVENLABS_API_KEY` | For speaking | ElevenLabs API key |
+| `ELEVENLABS_AGENT_ID` | For speaking | ElevenLabs Conversational AI agent ID |
+
+## Speaking Practice Setup
+
+The speaking practice feature uses [ElevenLabs Conversational AI](https://elevenlabs.io/docs/conversational-ai) to provide voice-based vocabulary practice.
+
+### Configuration
+
+1. Create an ElevenLabs account and get an API key from [elevenlabs.io](https://elevenlabs.io)
+2. Create a Conversational AI agent in the ElevenLabs dashboard
+3. Add the following to your `.env.local`:
+   ```env
+   ELEVENLABS_API_KEY=your_api_key
+   ELEVENLABS_AGENT_ID=your_agent_id
+   ```
+
+### Usage
+
+1. Go to the Flashcards page
+2. Click "Select Cards" to enter selection mode
+3. Tap/click cards to select them (works in both grid and carousel views)
+4. Click "Practice Speaking" to start a voice session
+5. The AI agent will practice only the selected vocabulary with you
+6. End the session to see a recap of words practiced
+
+### Without ElevenLabs
+
+The feature degrades gracefully — if the environment variables are not set, the modal will display a configuration message and show the selected vocabulary list.
 
 ## Deployment
 

@@ -1,0 +1,235 @@
+# Flashcard Data Export — 2026-03-10T06:17:48.271Z
+# front	back	category
+base class	基底クラス (きていくらす)	oop
+linked list	連結リスト (れんけつりすと)	data_structures_algorithms
+heap	ヒープ (ひーぷ)	data_structures_algorithms
+hash table	ハッシュテーブル (はっしゅてーぶる)	data_structures_algorithms
+graph	グラフ (ぐらふ)	data_structures_algorithms
+edge	辺 (へん)	data_structures_algorithms
+deque	デック (でっく)	data_structures_algorithms
+data structure	データ構造 (でーたこうぞう)	data_structures_algorithms
+binary tree	二分木 (にぶんぎ)	data_structures_algorithms
+binary search tree	二分探索木 (にぶんたんさくぼく)	data_structures_algorithms
+algorithm	アルゴリズム (あるごりずむ)	data_structures_algorithms
+static method	静的メソッド (せいてきめそっど)	oop
+property	プロパティ (ぷろぱてぃ)	oop
+polymorphism	多態性 (たたいせい)	oop
+override	オーバーライド (おーばーらいど)	oop
+overload	オーバーロード (おーばーろーど)	oop
+interface	インターフェース (いんたーふぇーす)	oop
+instance	インスタンス (いんすたんす)	oop
+inheritance	継承 (けいしょう)	oop
+implementation	実装 (じっそう)	oop
+field	フィールド (ふぃーるど)	oop
+encapsulation	カプセル化 (かぷせるか)	oop
+derived class	派生クラス (はせいくらす)	oop
+destructor	デストラクタ (ですとらくた)	oop
+constructor	コンストラクタ (こんすとらくた)	oop
+composition	コンポジション (こんぽじしょん)	oop
+array	配列 (はいれつ)	programming_fundamentals
+argument	実引数 (じつひきすう)	programming_fundamentals
+boolean	真偽値 (しんぎち)	programming_fundamentals
+conditional	条件分岐 (じょうけんぶんき)	programming_fundamentals
+constant	定数 (ていすう)	programming_fundamentals
+expression	式 (しき)	programming_fundamentals
+function	関数 (かんすう)	programming_fundamentals
+loop	ループ (るーぷ)	programming_fundamentals
+method	メソッド (めそっど)	programming_fundamentals
+module	モジュール (もじゅーる)	programming_fundamentals
+namespace	名前空間 (なまえくうかん)	programming_fundamentals
+number	数値 (すうち)	programming_fundamentals
+object	オブジェクト (おぶじぇくと)	programming_fundamentals
+operator	演算子 (えんざんし)	programming_fundamentals
+package	パッケージ (ぱっけーじ)	programming_fundamentals
+parameter	仮引数 (かりひきすう)	programming_fundamentals
+return value	戻り値 (もどりち)	programming_fundamentals
+statement	文 (ぶん)	programming_fundamentals
+string	文字列 (もじれつ)	programming_fundamentals
+variable	変数 (へんすう)	programming_fundamentals
+abstraction	抽象化 (ちゅうしょうか)	oop
+access modifier	アクセス修飾子 (あくせすしゅうしょくし)	oop
+aggregation	集約 (しゅうやく)	oop
+association	関連 (かんれん)	oop
+stack	スタック (すたっく)	data_structures_algorithms
+list	リスト (りすと)	data_structures_algorithms
+map	マップ (まっぷ)	data_structures_algorithms
+queue	キュー (きゅー)	data_structures_algorithms
+searching	探索 (たんさく)	data_structures_algorithms
+set	集合 (しゅうごう)	data_structures_algorithms
+sorting	ソート (そーと)	data_structures_algorithms
+traversal	走査 (そうさ)	data_structures_algorithms
+tree	木構造 (きこうぞう)	data_structures_algorithms
+vertex	頂点 (ちょうてん)	data_structures_algorithms
+CORS	CORS (しーおーあーるえす)	web_development
+CSS	CSS (しーえすえす)	web_development
+HTML	HTML (えいちてぃーえむえる)	web_development
+JSON	JSON (じぇいそん)	web_development
+JavaScript	ジャバスクリプト (じゃばすくりぷと)	web_development
+REST API	REST API (れすとえーぴーあい)	web_development
+TypeScript	タイプスクリプト (たいぷすくりぷと)	web_development
+body	ボディ (ぼでぃ)	web_development
+cookie	クッキー (くっきー)	web_development
+endpoint	エンドポイント (えんどぽいんと)	web_development
+framework	フレームワーク (ふれーむわーく)	web_development
+header	ヘッダー (へっだー)	web_development
+library	ライブラリ (らいぶらり)	web_development
+middleware	ミドルウェア (みどるうぇあ)	web_development
+query parameter	クエリパラメータ (くえりぱらめーた)	web_development
+route	ルート (るーと)	web_development
+server-side rendering	サーバーサイドレンダリング (さーばーさいどれんだりんぐ)	web_development
+session	セッション (せっしょん)	web_development
+single page application	シングルページアプリケーション (しんぐるぺーじあぷりけーしょん)	web_development
+status code	ステータスコード (すてーたすこーど)	web_development
+column	列 (れつ)	database
+constraint	制約 (せいやく)	database
+database	データベース (でーたべーす)	database
+foreign key	外部キー (がいぶきー)	database
+index	インデックス (いんでっくす)	database
+isolation level	分離レベル (ぶんりれべる)	database
+join	結合 (けつごう)	database
+migration	マイグレーション (まいぐれーしょん)	database
+normalization	正規化 (せいきか)	database
+primary key	主キー (しゅきー)	database
+query	クエリ (くえり)	database
+record	レコード (れこーど)	database
+rollback	ロールバック (ろーるばっく)	database
+row	行 (ぎょう)	database
+schema	スキーマ (すきーま)	database
+stored procedure	ストアドプロシージャ (すとあどぷろしーじゃ)	database
+table	表 (ひょう)	database
+transaction	トランザクション (とらんざくしょん)	database
+trigger	トリガー (とりがー)	database
+view	ビュー (びゅー)	database
+API gateway	APIゲートウェイ (えーぴーあいげーとぅうぇい)	cloud
+auto scaling	自動スケーリング (じどうすけーりんぐ)	cloud
+availability zone	アベイラビリティーゾーン (あべいらびりてぃーぞーん)	cloud
+block storage	ブロックストレージ (ぶろっくすとれーじ)	cloud
+cloud	クラウド (くらうど)	cloud
+function as a service	FaaS (ふぁーず)	cloud
+infrastructure as a service	IaaS (あいあーす)	cloud
+load balancer	ロードバランサー (ろーどばらんさー)	cloud
+managed service	マネージドサービス (まねーじどさーびす)	cloud
+network security group	ネットワークセキュリティグループ (ねっとわーくせきゅりてぃぐるーぷ)	cloud
+object storage	オブジェクトストレージ (おぶじぇくとすとれーじ)	cloud
+platform as a service	PaaS (ぱーす)	cloud
+region	リージョン (りーじょん)	cloud
+serverless	サーバーレス (さーばーれす)	cloud
+subnet	サブネット (さぶねっと)	cloud
+virtual machine	仮想マシン (かそうましん)	cloud
+VPC	VPC (ぶいぴーしー)	cloud
+NAT gateway	NATゲートウェイ (なっとげーとぅうぇい)	cloud
+gateway	ゲートウェイ (げーとぅうぇい)	cloud
+access token	アクセス トークン (あくせす とーくん)	security
+asymmetric key	非対称鍵 (ひたいしょうかぎ)	security
+authentication	認証 (にんしょう)	security
+authorization	認可 (にんか)	security
+certificate	証明書 (しょうめいしょ)	security
+decryption	復号 (ふくごう)	security
+encryption	暗号化 (あんごうか)	security
+penetration test	ペネトレーションテスト (ぺねとれーしょんてすと)	security
+identity provider	アイデンティティ プロバイダ (あいでんてぃてぃ ぷろばいだ)	security
+HTTPS	HTTPS (えいちてぃーてぃーぴーえす)	security
+hash function	ハッシュ関数 (はっしゅかんすう)	security
+exploit	エクスプロイト (えくすぷろいと)	security
+artifact	アーティファクト (あーてぃふぁくと)	devops
+build	ビルド (びるど)	devops
+CI/CD	CI/CD (しーあい・しーでぃー)	devops
+configuration management	構成管理 (こうせいかんり)	devops
+container	コンテナ (こんてな)	devops
+deployment	デプロイ (でぷろい)	devops
+DevOps	デブオプス (でぶおぷす)	devops
+environment variable	環境変数 (かんきょうへんすう)	devops
+image	イメージ (いめーじ)	devops
+infrastructure as code	コードによるインフラ管理 (こーどによるいんふらかんり)	devops
+logging	ログ記録 (ろぐきろく)	devops
+metric	メトリクス (めとりくす)	devops
+monitoring	監視 (かんし)	devops
+orchestration	オーケストレーション (おーけすとれーしょん)	devops
+pipeline	パイプライン (ぱいぷらいん)	devops
+production environment	本番環境 (ほんばんかんきょう)	devops
+runner	ランナー (らんなー)	devops
+staging environment	ステージング環境 (すてーじんぐかんきょう)	devops
+version control	バージョン管理 (ばーじょんかんり)	devops
+overfitting	過学習 (かがくしゅう)	ai_ml
+supervised learning	教師あり学習 (きょうしありがくしゅう)	ai_ml
+test data	テストデータ (てすとでーた)	ai_ml
+training data	学習データ (がくしゅうでーた)	ai_ml
+unsupervised learning	教師なし学習 (きょうしなしがくしゅう)	ai_ml
+validation data	検証データ (けんしょうでーた)	ai_ml
+underfitting	未学習 (みがくしゅう)	ai_ml
+button	ボタン (ぼたん)	ui_ux
+call to action	コールトゥアクション (こーるとぅあくしょん)	ui_ux
+color palette	カラーパレット (からーぱれっと)	ui_ux
+dropdown	ドロップダウン (どろっぷだうん)	ui_ux
+footer	フッター (ふったー)	ui_ux
+form	フォーム (ふぉーむ)	ui_ux
+grid system	グリッドシステム (ぐりっどしすてむ)	ui_ux
+icon	アイコン (あいこん)	ui_ux
+input field	入力フィールド (にゅうりょくふぃーるど)	ui_ux
+layout	レイアウト (れいあうと)	ui_ux
+mockup	モックアップ (もっくあっぷ)	ui_ux
+modal dialog	モーダルダイアログ (もーだるだいあろぐ)	ui_ux
+navigation bar	ナビゲーションバー (なびげーしょんばー)	ui_ux
+prototype	プロトタイプ (ぷろとたいぷ)	ui_ux
+sidebar	サイドバー (さいどばー)	ui_ux
+typography	タイポグラフィ (たいぽぐらふぃ)	ui_ux
+user experience	ユーザー体験 (ゆーざーたいけん)	ui_ux
+user interface	ユーザーインターフェース (ゆーざーいんたーふぇーす)	ui_ux
+wireframe	ワイヤーフレーム (わいやーふれーむ)	ui_ux
+refresh token	リフレッシュトークン (りふれっしゅとーくん)	security
+salt	ソルト (そると)	security
+security	セキュリティ (せきゅりてぃ)	security
+tooltip	ツールチップ (つーるちっぷ)	ui_ux
+security patch	セキュリティパッチ (せきゅりてぃぱっち)	security
+session token	セッショントークン (せっしょんとーくん)	security
+symmetric key	共通鍵 (きょうつうかぎ)	security
+TLS	TLS (てぃーえるえす)	security
+vulnerability	脆弱性 (ぜいじゃくせい)	security
+batch	バッチ (ばっち)	ai_ml
+deep learning	ディープラーニング (でぃーぷらーにんぐ)	ai_ml
+epoch	エポック (えぽっく)	ai_ml
+feature	特徴量 (とくちょうりょう)	ai_ml
+gradient descent	勾配降下法 (こうばいこうかほう)	ai_ml
+inference	推論 (すいろん)	ai_ml
+label	ラベル (らべる)	ai_ml
+loss function	損失関数 (そんしつかんすう)	ai_ml
+machine learning	機械学習 (きかいがくしゅう)	ai_ml
+model	モデル (もでる)	ai_ml
+neural network	ニューラルネットワーク (にゅーらるねっとわーく)	ai_ml
+optimizer	オプティマイザ (おぷてぃまいざ)	ai_ml
+reinforcement learning	強化学習 (きょうかがくしゅう)	ai_ml
+brain training	脳トレ (のうとれ)	general
+level of politeness	礼儀正しさのレベル (れいぎただしさのれべる)	general
+loyalty	忠誠心 (ちゅうせいしん)	general
+adopt new technology	新しい技術を採用する (あたらしいぎじゅつをさいようする)	general
+to stay (overnight)	泊まる (とまる)	general
+resonance	共鳴 (きょうめい)	general
+foreign resident	外国人居住者 (がいこくじんきょじゅうしゃ)	general
+ice age	氷河期 (ひょうがき)	general
+archaeology	考古学 (こうこがく)	general
+tide	潮 (しお)	general
+evil spirit	悪霊 (あくりょう)	general
+poverty	貧困 (ひんこん)	general
+wealth	富 (とみ)	general
+adverb	副詞 (ふくし)	general
+robbery	強盗 (ごうとう)	general
+poem	詩 (し)	general
+wardrobe	ワードローブ (わーどろーぶ)	general
+communism	共産主義 (きょうさんしゅぎ)	general
+democracy	民主主義 (みんしゅしゅぎ)	general
+dictatorship	独裁 (どくさい)	general
+two-factor authentication	二要素認証 (にようそにんしょう)	security
+catch up	追いつく (おいつく)	general
+gecko	ヤモリ (やもり)	general
+hunter spider	ハンタースパイダー (はんたーすぱいだー)	general
+bandwidth	帯域幅 (たいきはば)	general
+guarantee	保証 (ほしょう)	general
+life insurance premium deduction certificate	生命保険料控除証明書 (せいめいほけんりょうこうじょしょうめいしょ)	general
+arrange	整う (ととのう)	general
+dock	ドック (どっく)	general
+tide	潮汐 (ちょうせき)	general
+confession	告白 (こくはく)	general
+concept	コンセプト (こんせぷと)	general
+devil	悪魔 (あくま)	general
+sense of ownership	当事者意識 (とうじしゃいしき)	general
+approval request	承認ようきゅう (しょうにんようきゅう)	general

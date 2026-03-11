@@ -11,6 +11,9 @@ interface FlashcardProps {
   selectedOption?: string | null;
   onOptionSelect?: (option: string) => void;
   correctReading?: string;
+  selectable?: boolean;
+  selected?: boolean;
+  onSelect?: (id: string) => void;
 }
 
 const FlashcardCard: React.FC<FlashcardProps> = ({
@@ -18,14 +21,26 @@ const FlashcardCard: React.FC<FlashcardProps> = ({
   quizOptions,
   selectedOption,
   onOptionSelect,
-  correctReading
+  correctReading,
+  selectable,
+  selected,
+  onSelect,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => {
+    if (selectable && onSelect) {
+      onSelect(flashcard.id);
+      return;
+    }
     if (!quizOptions) {
       setIsFlipped(!isFlipped);
     }
+  };
+
+  const handleCheckboxClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onSelect?.(flashcard.id);
   };
 
   const handleOptionClick = (e: React.MouseEvent, option: string) => {
@@ -43,7 +58,7 @@ const FlashcardCard: React.FC<FlashcardProps> = ({
 
   return (
     <div
-      className="group cursor-pointer perspective-1000 w-full min-h-[18rem] transition-all duration-300"
+      className={`group cursor-pointer perspective-1000 w-full min-h-[18rem] transition-all duration-300 ${selectable && selected ? 'ring-2 ring-emerald-500 rounded-2xl' : ''}`}
       onClick={handleFlip}
     >
       <div
@@ -52,6 +67,21 @@ const FlashcardCard: React.FC<FlashcardProps> = ({
       >
         {/* Front */}
         <div className="absolute inset-0 backface-hidden bg-white dark:bg-zinc-900 rounded-2xl shadow-sm ring-1 ring-zinc-200 dark:ring-zinc-800 p-6 flex flex-col items-center justify-center text-center">
+          {selectable && (
+            <div className="absolute top-3 right-3 z-10" onClick={handleCheckboxClick}>
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
+                selected
+                  ? 'bg-emerald-500 border-emerald-500'
+                  : 'border-zinc-300 dark:border-zinc-600 hover:border-zinc-400 dark:hover:border-zinc-500'
+              }`}>
+                {selected && (
+                  <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                )}
+              </div>
+            </div>
+          )}
           <div className="flex-1 flex flex-col items-center justify-center w-full">
             {/* Kana reading above kanji */}
             {correctReading && (
