@@ -25,6 +25,7 @@ const FlashcardsPage = () => {
     const [loading, setLoading] = useState(true);
     const searchParams = useSearchParams();
     const searchQuery = searchParams.get('q') || '';
+    const categoriesParam = searchParams.get('categories') || '';
     const [studyMode, setStudyMode] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -38,14 +39,24 @@ const FlashcardsPage = () => {
     const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
     const [showSpeakingModal, setShowSpeakingModal] = useState(false);
 
-    const filteredFlashcards = searchQuery
-        ? flashcards.filter((card) => {
-              const q = searchQuery.toLowerCase();
-              const kanji = extractKanji(card.back).toLowerCase();
-              const reading = extractReading(card.back).toLowerCase();
-              return card.front.toLowerCase().includes(q) || kanji.includes(q) || reading.includes(q);
-          })
-        : flashcards;
+    const selectedCategories = categoriesParam
+        ? new Set(categoriesParam.split(','))
+        : null;
+
+    const filteredFlashcards = flashcards.filter((card) => {
+        // Category filter
+        if (selectedCategories && !selectedCategories.has(card.category || '')) {
+            return false;
+        }
+        // Search filter
+        if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            const kanji = extractKanji(card.back).toLowerCase();
+            const reading = extractReading(card.back).toLowerCase();
+            return card.front.toLowerCase().includes(q) || kanji.includes(q) || reading.includes(q);
+        }
+        return true;
+    });
 
     // Minimum swipe distance (in px)
     const minSwipeDistance = 50;
@@ -88,11 +99,11 @@ const FlashcardsPage = () => {
         fetchFlashcards();
     }, []);
 
-    // Reset indices when search query changes
+    // Reset indices when search query or categories change
     useEffect(() => {
         setCurrentIndex(0);
         setMobileCardIndex(0);
-    }, [searchQuery]);
+    }, [searchQuery, categoriesParam]);
 
     const generateOptions = () => {
         const currentCard = filteredFlashcards[currentIndex];
@@ -220,6 +231,11 @@ const FlashcardsPage = () => {
                             : searchQuery
                                 ? `${filteredFlashcards.length} of ${flashcards.length} cards`
                                 : `${flashcards.length} cards available for study`}
+                        {selectedCategories && (
+                            <span className="text-zinc-400 dark:text-zinc-500">
+                                {' | '}{filteredFlashcards.length} selected
+                            </span>
+                        )}
                     </p>
                 </div>
                 <div className="flex items-center gap-3 flex-wrap">
